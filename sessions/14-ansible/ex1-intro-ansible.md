@@ -40,10 +40,10 @@ We will be cloning Galaxy from its Github repo into the home directory and then 
 
 * Login to your VM as the *ubuntu* user with tunneling enabled: `ssh -L 8080:localhost:8080 -i galaxy-ws.pem ubuntu@<IP>`
 
-Once you've logged in, from your home directory, we'll need to install Python 2.7 as well as clone the Galaxy git repo:
+Once you've logged in, from your home directory, we'll need to install Python 2.7, python virtual environment as well as clone the Galaxy git repo:
 
 ```
-sudo apt-get install -y python python-pip ansible
+sudo apt-get install -y python python-pip ansible python-virtualenv
 git clone -b release_17.09 https://github.com/galaxyproject/galaxy.git
 ```
 
@@ -315,7 +315,7 @@ the tasks now. Before running the playbook, make sure your Galaxy instance
 is running in _daemon_ mode.
 
 ```
-ansible-playbook playbook.yml
+ansible-playbook -vv playbook.yml
 ```
 
 **Remote running**
